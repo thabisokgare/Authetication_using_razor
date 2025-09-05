@@ -1,0 +1,58 @@
+﻿@page
+@model WebApp_undertheHood.Pages.Account.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<!-- Login Form -->
+<div id="loginForm" class="container py-5 fade-in-up">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm rounded-4" style="background-color: #ffffff;">
+                <div class="card-header text-center" style="background-color: #4B0082; color: #ffffff;">
+                    <h4 class="mb-0">Welcome Back</h4>
+                    <small>Please log in to continue</small>
+                </div>
+                <div class="card-body p-4">
+                    <form id="loginFormElement" method="post" novalidate>
+                        <div class="mb-3">
+                            <label asp-for="credential.Name" class="form-label text-muted">Username</label>
+                            <input asp-for="credential.Name" class="form-control border-purple" />
+                            <span asp-validation-for="credential.Name" class="text-danger small"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="credential.Password" class="form-label text-muted">Password</label>
+                            <input asp-for="credential.Password" type="password" class="form-control border-purple" />
+                            <span asp-validation-for="credential.Password" class="text-danger small"></span>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-purple text-white">
+                                <i class="bi bi-lock-fill me-1"></i> Log In
+                            </button>
+                        </div>
+                        <div class="mt-3 text-center">
+                            <a asp-page="/Account/Register" class="text-decoration-none text-purple">Don't have an account? Sign up</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+    .text-purple { color: #4B0082; }
+    .bg-purple { background-color: #4B0082; }
+    .btn-purple {
+        background-color: #4B0082;
+        border: none;
+    }
+    .btn-purple:hover {
+        background-color: #6A0DAD;
+    }
+    .border-purple {
+        border: 1px solid #4B0082;
+    }
+</style>
